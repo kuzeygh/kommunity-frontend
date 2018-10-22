@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import { white, lightGray } from '$/css/common';
+import { white, lightGray } from '@/css/common';
 
 const styles = {
   navbar: {
@@ -64,7 +64,7 @@ class Header extends Component {
         </ul>
         <ul style={styles.ulLeft}>
           <li style={styles.li}>
-            <input style={styles.input} placeholder="Search Communities"/>
+            <input style={styles.input} placeholder="Search Communities" />
             <NavLink to="/login" style={styles.link}>Login</NavLink>
             <NavLink to="/" style={styles.signup}>Sign Up</NavLink>
           </li>

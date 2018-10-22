@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '$/components/commons/header';
+import Header from '@/components/commons/header';
 
 class Home extends React.Component {
   render() {
