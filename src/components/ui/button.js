@@ -6,7 +6,7 @@ const style = {
   common: 'button inline-block text-center cursor-pointer border border-transparent border-box',
   container: {
     danger: 'text-white bg-red',
-    outline: 'text-blueyGrey bg-white hover:bg-paleGrey border-lightBlueGrey',
+    outline: 'text-blueyGrey hover:bg-paleGrey border-lightBlueGrey',
     plain: 'text-primary hover:text-primaryDark bg-transparent',
     primary: 'text-white bg-primary',
     secondary: 'text-white bg-blueyGrey',
