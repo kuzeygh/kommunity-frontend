@@ -45,7 +45,7 @@ server.get('/*', (req, res) => {
 
   // Grab the initial state from our Redux store
   const finalState = store.getState();
-  const cssAssetUrl = _get(assets, 'css/fonts.css');
+  const cssAssetUrl = _get(assets, 'client.css');
   const jsAssetUrl = _get(assets, 'client.js');
 
   if (context.url) {
@@ -69,7 +69,7 @@ server.get('/*', (req, res) => {
   <meta charset="utf-8" />
   <title>Welcome to Razzle</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  ${cssAssetUrl ? `<link rel="stylesheet" href="${cssAssetUrl}">` : ''}
+  ${cssAssetUrl ? `<link rel="stylesheet" type="text/css" href="${cssAssetUrl}">` : ''}
   ${process.env.NODE_ENV === 'production'
     ? `<script src="${jsAssetUrl}" defer></script>`
     : `<script src="${jsAssetUrl}" defer crossorigin></script>`}

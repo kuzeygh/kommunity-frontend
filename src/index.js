@@ -27,7 +27,4 @@ if (module.hot) {
     server.on('request', newApp);
     currentApp = newApp;
   });
-} else {
-  // exporting for testing purposes
-  module.exports = server;
 }
