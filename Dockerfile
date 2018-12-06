@@ -12,10 +12,11 @@ COPY package.json ./
 # Install app dependencies
 RUN npm install
 
-RUN npm run build
-
 # Now, it is time to copy the src
 COPY . .
+
+# Preparing build for staging/prod
+RUN npm run build
 
 # It will be npm run start:production on heroku (see heroku.yml)
 CMD ["npm", "run"]
