@@ -563,7 +563,7 @@ table {
 }
 
 .bg-paleBlue {
-  background-color: #f4f6f8;
+  background-color: #dfe3e8;
 }
 
 .bg-paleGrey {
@@ -627,7 +627,7 @@ table {
 }
 
 .hover\:bg-paleBlue:hover {
-  background-color: #f4f6f8;
+  background-color: #dfe3e8;
 }
 
 .hover\:bg-paleGrey:hover {
@@ -691,7 +691,7 @@ table {
 }
 
 .focus\:bg-paleBlue:focus {
-  background-color: #f4f6f8;
+  background-color: #dfe3e8;
 }
 
 .focus\:bg-paleGrey:focus {
@@ -755,7 +755,7 @@ table {
 }
 
 .disabled\:bg-paleBlue:disabled {
-  background-color: #f4f6f8;
+  background-color: #dfe3e8;
 }
 
 .disabled\:bg-paleGrey:disabled {
@@ -891,7 +891,7 @@ table {
 }
 
 .border-paleBlue {
-  border-color: #f4f6f8;
+  border-color: #dfe3e8;
 }
 
 .border-paleGrey {
@@ -955,7 +955,7 @@ table {
 }
 
 .hover\:border-paleBlue:hover {
-  border-color: #f4f6f8;
+  border-color: #dfe3e8;
 }
 
 .hover\:border-paleGrey:hover {
@@ -1019,7 +1019,7 @@ table {
 }
 
 .focus\:border-paleBlue:focus {
-  border-color: #f4f6f8;
+  border-color: #dfe3e8;
 }
 
 .focus\:border-paleGrey:focus {
@@ -1048,6 +1048,10 @@ table {
 
 .rounded-8 {
   border-radius: 8px;
+}
+
+.rounded-12 {
+  border-radius: 12px;
 }
 
 .rounded-24 {
@@ -1100,6 +1104,26 @@ table {
 .rounded-l-8 {
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
+}
+
+.rounded-t-12 {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.rounded-r-12 {
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.rounded-b-12 {
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.rounded-l-12 {
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
 }
 
 .rounded-t-24 {
@@ -1192,6 +1216,22 @@ table {
 
 .rounded-bl-8 {
   border-bottom-left-radius: 8px;
+}
+
+.rounded-tl-12 {
+  border-top-left-radius: 12px;
+}
+
+.rounded-tr-12 {
+  border-top-right-radius: 12px;
+}
+
+.rounded-br-12 {
+  border-bottom-right-radius: 12px;
+}
+
+.rounded-bl-12 {
+  border-bottom-left-radius: 12px;
 }
 
 .rounded-tl-24 {
@@ -1648,6 +1688,14 @@ table {
 
 .font-extrabold {
   font-weight: 800;
+}
+
+.h-2 {
+  height: .5rem;
+}
+
+.h-4 {
+  height: 1rem;
 }
 
 .h-6 {
@@ -2762,6 +2810,10 @@ table {
   opacity: .4;
 }
 
+.opacity-50 {
+  opacity: .5;
+}
+
 .opacity-60 {
   opacity: .6;
 }
@@ -2784,6 +2836,10 @@ table {
 
 .hover\:opacity-40:hover {
   opacity: .4;
+}
+
+.hover\:opacity-50:hover {
+  opacity: .5;
 }
 
 .hover\:opacity-60:hover {
@@ -3417,6 +3473,42 @@ table {
   box-shadow: none;
 }
 
+.shadow-input-primary {
+  box-shadow: inset 0 0 0 1px #325fff;
+}
+
+.shadow-input-red {
+  box-shadow: inset 0 0 0 1px #ff3e3e;
+}
+
+.focus\:shadow:focus {
+  box-shadow: 0 0 1px 0 rgba(23, 43, 77, .24);
+}
+
+.focus\:shadow-md:focus {
+  box-shadow: 0 2px 4px 0 rgba(23, 43, 77, .24);
+}
+
+.focus\:shadow-lg:focus {
+  box-shadow: 0 6px 8px 0 rgba(23, 43, 77, .24);
+}
+
+.focus\:shadow-xl:focus {
+  box-shadow:  0 20px 28px 0 rgba(23, 43, 77, .24);
+}
+
+.focus\:shadow-none:focus {
+  box-shadow: none;
+}
+
+.focus\:shadow-input-primary:focus {
+  box-shadow: inset 0 0 0 1px #325fff;
+}
+
+.focus\:shadow-input-red:focus {
+  box-shadow: inset 0 0 0 1px #ff3e3e;
+}
+
 .fill-current {
   fill: currentColor;
 }
@@ -3482,7 +3574,7 @@ table {
 }
 
 .text-paleBlue {
-  color: #f4f6f8;
+  color: #dfe3e8;
 }
 
 .text-paleGrey {
@@ -3546,7 +3638,7 @@ table {
 }
 
 .hover\:text-paleBlue:hover {
-  color: #f4f6f8;
+  color: #dfe3e8;
 }
 
 .hover\:text-paleGrey:hover {
@@ -3610,7 +3702,7 @@ table {
 }
 
 .focus\:text-paleBlue:focus {
-  color: #f4f6f8;
+  color: #dfe3e8;
 }
 
 .focus\:text-paleGrey:focus {
@@ -3845,12 +3937,24 @@ table {
   white-space: nowrap;
 }
 
+.w-2 {
+  width: .5rem;
+}
+
+.w-4 {
+  width: 1rem;
+}
+
 .w-6 {
   width: 1.5rem;
 }
 
 .w-8 {
   width: 2rem;
+}
+
+.w-10 {
+  width: 2.5rem;
 }
 
 .w-12 {
@@ -4160,6 +4264,14 @@ table {
 
   .sm\:flex-no-shrink {
     flex-shrink: 0;
+  }
+
+  .sm\:h-2 {
+    height: .5rem;
+  }
+
+  .sm\:h-4 {
+    height: 1rem;
   }
 
   .sm\:h-6 {
@@ -5846,7 +5958,7 @@ table {
   }
 
   .sm\:text-paleBlue {
-    color: #f4f6f8;
+    color: #dfe3e8;
   }
 
   .sm\:text-paleGrey {
@@ -5910,7 +6022,7 @@ table {
   }
 
   .sm\:hover\:text-paleBlue:hover {
-    color: #f4f6f8;
+    color: #dfe3e8;
   }
 
   .sm\:hover\:text-paleGrey:hover {
@@ -5974,7 +6086,7 @@ table {
   }
 
   .sm\:focus\:text-paleBlue:focus {
-    color: #f4f6f8;
+    color: #dfe3e8;
   }
 
   .sm\:focus\:text-paleGrey:focus {
@@ -6125,12 +6237,24 @@ table {
     -moz-osx-font-smoothing: auto;
   }
 
+  .sm\:w-2 {
+    width: .5rem;
+  }
+
+  .sm\:w-4 {
+    width: 1rem;
+  }
+
   .sm\:w-6 {
     width: 1.5rem;
   }
 
   .sm\:w-8 {
     width: 2rem;
+  }
+
+  .sm\:w-10 {
+    width: 2.5rem;
   }
 
   .sm\:w-12 {
@@ -6407,6 +6531,14 @@ table {
 
   .md\:flex-no-shrink {
     flex-shrink: 0;
+  }
+
+  .md\:h-2 {
+    height: .5rem;
+  }
+
+  .md\:h-4 {
+    height: 1rem;
   }
 
   .md\:h-6 {
@@ -8093,7 +8225,7 @@ table {
   }
 
   .md\:text-paleBlue {
-    color: #f4f6f8;
+    color: #dfe3e8;
   }
 
   .md\:text-paleGrey {
@@ -8157,7 +8289,7 @@ table {
   }
 
   .md\:hover\:text-paleBlue:hover {
-    color: #f4f6f8;
+    color: #dfe3e8;
   }
 
   .md\:hover\:text-paleGrey:hover {
@@ -8221,7 +8353,7 @@ table {
   }
 
   .md\:focus\:text-paleBlue:focus {
-    color: #f4f6f8;
+    color: #dfe3e8;
   }
 
   .md\:focus\:text-paleGrey:focus {
@@ -8372,12 +8504,24 @@ table {
     -moz-osx-font-smoothing: auto;
   }
 
+  .md\:w-2 {
+    width: .5rem;
+  }
+
+  .md\:w-4 {
+    width: 1rem;
+  }
+
   .md\:w-6 {
     width: 1.5rem;
   }
 
   .md\:w-8 {
     width: 2rem;
+  }
+
+  .md\:w-10 {
+    width: 2.5rem;
   }
 
   .md\:w-12 {
@@ -8654,6 +8798,14 @@ table {
 
   .lg\:flex-no-shrink {
     flex-shrink: 0;
+  }
+
+  .lg\:h-2 {
+    height: .5rem;
+  }
+
+  .lg\:h-4 {
+    height: 1rem;
   }
 
   .lg\:h-6 {
@@ -10340,7 +10492,7 @@ table {
   }
 
   .lg\:text-paleBlue {
-    color: #f4f6f8;
+    color: #dfe3e8;
   }
 
   .lg\:text-paleGrey {
@@ -10404,7 +10556,7 @@ table {
   }
 
   .lg\:hover\:text-paleBlue:hover {
-    color: #f4f6f8;
+    color: #dfe3e8;
   }
 
   .lg\:hover\:text-paleGrey:hover {
@@ -10468,7 +10620,7 @@ table {
   }
 
   .lg\:focus\:text-paleBlue:focus {
-    color: #f4f6f8;
+    color: #dfe3e8;
   }
 
   .lg\:focus\:text-paleGrey:focus {
@@ -10619,12 +10771,24 @@ table {
     -moz-osx-font-smoothing: auto;
   }
 
+  .lg\:w-2 {
+    width: .5rem;
+  }
+
+  .lg\:w-4 {
+    width: 1rem;
+  }
+
   .lg\:w-6 {
     width: 1.5rem;
   }
 
   .lg\:w-8 {
     width: 2rem;
+  }
+
+  .lg\:w-10 {
+    width: 2.5rem;
   }
 
   .lg\:w-12 {

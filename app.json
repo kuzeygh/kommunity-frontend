@@ -1,0 +1,16 @@
+{
+  "name": "kommunity-frontend",
+  "scripts": {
+    "postdeploy": "echo postdeploy",
+    "pr-predestroy": "echo predestroy"
+  },
+  "env": {
+    "NODE_ENV": "staging"
+  },
+  "formation": {
+  },
+  "addons": [
+
+  ],
+  "buildpacks": []
+}

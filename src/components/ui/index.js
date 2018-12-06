@@ -10,6 +10,10 @@ import Link from './link';
 import TextArea from './text-area';
 import Title from './title';
 import Input from './input';
+import Checkbox from './checkbox';
+import CheckboxGroup from './checkbox-group';
+import Switch from './switch';
+import Notification from './notification';
 
 export {
   Avatar,
@@ -19,9 +23,14 @@ export {
   Dropdown,
   Icon,
   Img,
+  Input,
   Paragraph,
   Link,
+  Notification,
+  Paragraph,
+  Switch,
   TextArea,
   Title,
-  Input,
+  Checkbox,
+  CheckboxGroup,
 };
