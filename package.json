@@ -7,6 +7,7 @@
     "tailwindcss": "./node_modules/.bin/tailwind build src/css/vendor/tailwind_source.css -c src/css/vendor/tailwind.setup.js -o ./src/css/vendor/tailwind_output.css",
     "start": "cross-env NODE_ENV=local razzle start",
     "start:pipeline": "NODE_ENV=production node build/server.js",
+    "heroku-postbuild": "npm run build",
     "check-if-not-committed": "node scripts/check-if-not-committed.js",
     "check-travis": "NODE_ENV=test run-s -nl lint cover",
     "test": "cross-env NODE_ENV=test jest --config .jest.json --forceExit",
