@@ -2,28 +2,19 @@
 import app from '@/server';
 import http from 'http';
 
-const { env } = require('process')
 const server = http.createServer(app);
 
 let currentApp = app;
 
-const port = () =>
-  parseInt(
-    env.RAZZLE_PORT ||
-    env.PORT ||
-    process.env.RAZZLE_PORT ||
-    process.env.PORT ||
-    3000,
-    10,
-  )
-const usedPort = port();
+const getEnv = c => process.env[c];
+const port = getEnv('PORT');
 
-server.listen(usedPort, (error) => {
+server.listen(port, (error) => {
   if (error) {
     console.log(error);
   }
 
-  console.log(`🚀 started on ${usedPort}`);
+  console.log(`🚀 started on ${port}`);
 });
 
 if (module.hot) {
