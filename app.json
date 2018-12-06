@@ -12,5 +12,6 @@
   "addons": [
 
   ],
+  "image": "heroku/nodejs",
   "buildpacks": []
 }
