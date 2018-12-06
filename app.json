@@ -9,9 +9,7 @@
   },
   "formation": {
   },
-  "addons": [
-
-  ],
+  "addons": [],
   "image": "heroku/nodejs",
   "buildpacks": []
 }
