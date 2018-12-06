@@ -5,7 +5,7 @@
     "pr-predestroy": "echo predestroy"
   },
   "env": {
-    "NODE_ENV": "staging"
+    "NODE_ENV": "production"
   },
   "formation": {
   },
