@@ -24,7 +24,6 @@ export {
   Icon,
   Img,
   Input,
-  Paragraph,
   Link,
   Notification,
   Paragraph,
