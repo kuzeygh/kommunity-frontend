@@ -6,7 +6,9 @@ const server = http.createServer(app);
 
 let currentApp = app;
 
-const port = process.env.PORT || 3000;
+// DONT UPDATE! workaround for process.env.PORT issue on heroku builds
+const getEnv = c => process.env[c];
+const port = getEnv('PORT');
 
 server.listen(port, (error) => {
   if (error) {

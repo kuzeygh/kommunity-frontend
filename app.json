@@ -1,16 +1,9 @@
 {
   "name": "kommunity-frontend",
-  "scripts": {
-    "postdeploy": "echo postdeploy",
-    "pr-predestroy": "echo predestroy"
-  },
-  "env": {
-    "NODE_ENV": "production"
-  },
-  "formation": {
-  },
-  "addons": [
 
-  ],
-  "buildpacks": []
+  "env": {
+    "NODE_ENV": "staging"
+  },
+  "image": "heroku/nodejs",
+  "stack": "container"
 }

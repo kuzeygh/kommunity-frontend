@@ -15,5 +15,8 @@ RUN npm install
 # Now, it is time to copy the src
 COPY . .
 
+# Preparing build for staging/prod
+RUN npm run build
+
 # It will be npm run start:production on heroku (see heroku.yml)
-CMD ["npm", "start"]
+CMD ["npm", "run"]
