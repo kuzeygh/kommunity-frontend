@@ -10,7 +10,6 @@
   "formation": {
   },
   "addons": [],
-  "image": "heroku/nodejs",
   "buildpacks": [],
   "stack": "container"
 }
