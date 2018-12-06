@@ -16,7 +16,6 @@ RUN npm install
 COPY . .
 
 # Preparing build for staging/prod
-ENV PORT ${PORT}
 RUN npm run build
 
 # It will be npm run start:production on heroku (see heroku.yml)
