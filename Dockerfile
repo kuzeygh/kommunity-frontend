@@ -16,4 +16,4 @@ RUN npm install
 COPY . .
 
 # It will be npm run start:production on heroku (see heroku.yml)
-CMD ["npm", "start"]
+CMD ["npm", "run", "start:pipeline"]
