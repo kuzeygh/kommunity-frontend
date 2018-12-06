@@ -20,7 +20,11 @@ module.exports = {
     if (!dev && target === 'web') {
       appConfig.plugins.push(
         new PurgecssPlugin({
-          paths: () => glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
+          paths: () => glob.sync([
+            `${PATHS.src}/**/*`,
+            'node_modules/slick-carousel/slick/slick.js',
+            'node_modules/slick-carousel/slick/slick-theme.js',
+          ], { nodir: true }),
           extractors: [
             {
               extractor: TailwindExtractor,
