@@ -3,51 +3,41 @@ import { Button, Paragraph, Title } from '@/components/ui';
 import Card from '../../ui/card';
 
 const pricingOptions = [{
-  label: "Free",
-  price: '0',
+  buttonLabel: 'Create Community',
+  buttonType: 'outline',
   currency: '$',
-  period: '/month',
   features: [
     'Up to 100 users',
     '5 GB file storage',
     'Support via online chat, email',
-    'Subdomain'
+    'Subdomain',
   ],
-  buttonType: 'outline',
+  label: 'Free',
+  period: '/month',
+  price: '0',
 }, {
-  label: "Free",
-  price: '0',
+  buttonLabel: 'Try free for 15 days',
+  buttonType: 'primary',
   currency: '$',
-  period: '/month',
-  features: [
-    'Up to 100 users',
-    '5 GB file storage',
-    'Support via online chat, email',
-    'Subdomain'
-  ],
-  buttonType: 'outline',
-},{
-  label: "Pro",
-  price: '39',
-  currency: '$',
-  period: '/month',
   features: [
     'Up to 1.000 user',
     '40 GB file storage',
     'Prime Support ',
-    'Your own domain'
+    'Your own domain',
   ],
-  buttonType: 'primary',
+  label: 'Pro',
+  period: '/month',
+  price: '39',
 }];
 
 const Pricing = () => (
-  <div className="">
-    <Title type="h4" extraClassName="font-bold text-center mb-12">
+  <div>
+    <Title type="h4" extraClassName="font-bold text-center mb-16">
       Choose the plan
     </Title>
     <div className="flex justify-center">
-      {pricingOptions.map(pricing => (
-        <Card applyPadding={false} shadow="md" extraClassName="mx-4" extraStyle={{width: '30%'}}>
+      {pricingOptions.map((pricing, index) => (
+        <Card key={index} applyPadding={false} shadow="md" extraClassName="w-4/12 mx-4">
           <Title type="h5" extraClassName="font-bold px-10 py-6">
             {pricing.label}
           </Title>
@@ -61,11 +51,15 @@ const Pricing = () => (
             </div>
           </div>
           <div className="px-10 pt-6 py-8">
-            {pricing.features.map(feature => (
-              <Paragraph extraClassName="text-dark mb-4">{feature}</Paragraph>
+            {pricing.features.map((feature, featureIndex) => (
+              <Paragraph key={featureIndex} extraClassName="text-dark mb-4">{feature}</Paragraph>
             ))}
             <div className="text-center">
-              <Button extraClassName="mx-auto mt-2" label="Create Community" styleType={pricing.buttonType} size="large" />
+              <Button
+                extraClassName="mx-auto mt-2"
+                label={pricing.buttonLabel}
+                styleType={pricing.buttonType}
+                size="large"/>
             </div>
           </div>
         </Card>

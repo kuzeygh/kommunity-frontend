@@ -12,10 +12,10 @@ const style = {
     secondary: 'text-white bg-blueyGrey',
   },
   groupOrder: {
-    first: 'rounded-l-lg',
-    last: 'rounded-r-lg',
+    first: 'rounded-l-24',
+    last: 'rounded-r-24',
     middle: 'rounded-none',
-    none: 'rounded-lg',
+    none: 'rounded-24',
   },
   label: {
     large: 'px-8 py-3 text-lg',

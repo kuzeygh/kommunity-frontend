@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cls from 'classnames';
 
 const style = {
-  common: 'w-1 border-blueyGrey bg-white my-4 rounded',
+  common: 'w-1 border-blueyGrey bg-white my-4 rounded-4',
   lg: 'shadow-lg',
   md: 'shadow-md',
   none: 'shadow',
@@ -12,10 +12,12 @@ const style = {
 };
 
 const Card = (props) => {
-  const { applyPadding, extraClassName, extraStyle, shadow } = props;
+  const {
+    applyPadding, extraClassName, extraStyle, shadow,
+  } = props;
   return (
     <div className={cls(extraClassName, style[shadow], style.common, {
-      [style.padding]: applyPadding
+      [style.padding]: applyPadding,
     })} style={extraStyle}>
       {props.children}
     </div>
@@ -23,8 +25,8 @@ const Card = (props) => {
 };
 
 Card.defaultProps = {
-  applyPadding: true
-}
+  applyPadding: true,
+};
 
 Card.propTypes = {
   applyPadding: PropTypes.bool,
