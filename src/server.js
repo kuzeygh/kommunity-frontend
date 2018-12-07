@@ -67,7 +67,7 @@ server.get('/*', (req, res) => {
 <head>
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta charset="utf-8" />
-  <title>Welcome to Razzle</title>
+  <title>Join, and build amazing communities! Kommunity.app</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   ${cssAssetUrl ? `<link rel="stylesheet" type="text/css" href="${cssAssetUrl}">` : ''}
   ${process.env.NODE_ENV === 'production'
