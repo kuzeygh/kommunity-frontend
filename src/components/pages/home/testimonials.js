@@ -28,7 +28,7 @@ const Testimonials = () => (
   <div>
     <Slider {...sliderSettings}>
       {testimonials.map((testimonial, index) => (
-        <div key={index} className="text-center">
+        <div key={index} className="text-center outline-none">
           <Img
             extraClassName="rounded-full mb-4 mx-auto w-18 h-18"
             src={testimonial.imgSrc}
