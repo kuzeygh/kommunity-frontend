@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Input, Notification, Icon } from '@/components/ui';
-import { Redirect } from 'react-router-dom';
+// import { Redirect } from 'react-router-dom';
 import gql from 'graphql-tag';
 import { Mutation } from 'react-apollo';
 import { setCookie } from '@/api/local-storage';
@@ -21,9 +21,9 @@ class Login extends React.Component {
     this.state = {
       disabled: false,
       email: '',
-      error: null, // server error
+      // error: null, // server error
       password: '',
-      response: null,
+      // response: null,
     };
   }
 
@@ -31,7 +31,7 @@ class Login extends React.Component {
     // const { username, password } = this.state;
     e.preventDefault();
 
-    this.setState({ disabled: true, error: null });
+    this.setState({ disabled: true });
 
     // login(username, password)
     //   .then(response => this.setState({ disabled: false, response }))
@@ -45,7 +45,7 @@ class Login extends React.Component {
   };
 
   render() {
-    const { email, password, disabled, error } = this.state;
+    const { email, password, disabled } = this.state;
 
     // TODO bariscc: maybe we should redirect within handlesubmit and use browser history instead of this
     // if (response) {
@@ -57,14 +57,13 @@ class Login extends React.Component {
 
     return (
       <Mutation mutation={LOGIN_MUTATION} variables={this.state}>
-        {(login, { error, loading }) => (
+        {(login, { error }) => (
           <div>
             {error && <Notification styleType="danger" text={error.message} flat />}
             <form
               onSubmit={async e => {
                 e.preventDefault();
                 await login().then(response => {
-                  console.log(response);
                   setCookie('token', response.data.login.token);
                 });
                 this.setState({
