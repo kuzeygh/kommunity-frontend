@@ -1,6 +1,6 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 import { Button, Input, Notification, Icon } from '@/components/ui';
-// import { Redirect } from 'react-router-dom';
 import gql from 'graphql-tag';
 import { Mutation } from 'react-apollo';
 import { setCookie } from '@/api/local-storage';
@@ -21,21 +21,36 @@ class Login extends React.Component {
     this.state = {
       disabled: false,
       email: '',
-      // error: null, // server error
+      error: null, // server error
       password: '',
       // response: null,
     };
   }
 
-  handleSubmit = e => {
-    // const { username, password } = this.state;
+  handleSubmit = async (e, login) => {
+    const { history } = this.props;
     e.preventDefault();
 
     this.setState({ disabled: true });
 
-    // login(username, password)
-    //   .then(response => this.setState({ disabled: false, response }))
-    //   .catch(error => this.setState({ disabled: false, error }));
+    await login()
+      .then(response => {
+        setCookie('token', response.data.login.token);
+        this.setState({
+          error: '',
+        });
+        history.push('/boarding');
+      })
+      .catch(error => {
+        this.setState({
+          error,
+        });
+      })
+      .finally(() => {
+        this.setState({
+          disabled: false,
+        });
+      });
   };
 
   handleInputChange = e => {
@@ -45,33 +60,14 @@ class Login extends React.Component {
   };
 
   render() {
-    const { email, password, disabled } = this.state;
-
-    // TODO bariscc: maybe we should redirect within handlesubmit and use browser history instead of this
-    // if (response) {
-    //   if (!response.username) {
-    //     return <Redirect to="/boarding" />;
-    //   }
-    //   return <Redirect to="/" />;
-    // }
+    const { email, password, disabled, error } = this.state;
 
     return (
       <Mutation mutation={LOGIN_MUTATION} variables={this.state}>
-        {(login, { error }) => (
+        {login => (
           <div>
             {error && <Notification styleType="danger" text={error.message} flat />}
-            <form
-              onSubmit={async e => {
-                e.preventDefault();
-                await login().then(response => {
-                  setCookie('token', response.data.login.token);
-                });
-                this.setState({
-                  email: '',
-                  password: '',
-                });
-              }}
-            >
+            <form onSubmit={e => this.handleSubmit(e, login)}>
               <Input
                 extraClassName="w-full block"
                 name="email"
@@ -112,4 +108,4 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+export default withRouter(Login);
