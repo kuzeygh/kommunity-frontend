@@ -1966,6 +1966,10 @@ table {
   height: 3rem;
 }
 
+.h-14 {
+  height: 3.5rem;
+}
+
 .h-16 {
   height: 4rem;
 }
@@ -5295,9 +5299,7 @@ table {
   --paleGrey: #f4f6f8;
   --white: #fff;
   --green: #19a560;
-  --faint-green: #19a560;
   --yellow: #edc200;
-  --faint-yellow: #fffceb;
   --red: #ff3e3e;
   --blue: #08aeea;
   --faint-green: #19a560;
@@ -6324,6 +6326,10 @@ table {
 
   .sm\:h-12 {
     height: 3rem;
+  }
+
+  .sm\:h-14 {
+    height: 3.5rem;
   }
 
   .sm\:h-16 {
@@ -10105,6 +10111,10 @@ table {
     height: 3rem;
   }
 
+  .md\:h-14 {
+    height: 3.5rem;
+  }
+
   .md\:h-16 {
     height: 4rem;
   }
@@ -13882,6 +13892,10 @@ table {
 
   .lg\:h-12 {
     height: 3rem;
+  }
+
+  .lg\:h-14 {
+    height: 3.5rem;
   }
 
   .lg\:h-16 {

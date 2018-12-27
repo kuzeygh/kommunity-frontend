@@ -51,7 +51,7 @@ class UIButton extends React.Component {
   };
 
   render() {
-    const { extraClassName, label, onClick, type, disabled } = this.props;
+    const { extraClassName, label, onClick, type, disabled, backgroundColor } = this.props;
 
     return (
       // eslint-disable-next-line react/button-has-type
@@ -60,6 +60,7 @@ class UIButton extends React.Component {
         className={cls(this.getClassnames(), extraClassName)}
         disabled={disabled}
         type={type || 'submit'}
+        style={{ backgroundColor }}
       >
         {label}
       </button>
@@ -73,6 +74,7 @@ UIButton.defaultProps = {
 };
 
 UIButton.propTypes = {
+  backgroundColor: PropTypes.string,
   disabled: PropTypes.bool,
   extraClassName: PropTypes.string,
   groupOrder: PropTypes.oneOf(['first', 'middle', 'last', 'none']),

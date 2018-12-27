@@ -10,11 +10,13 @@ import CommunityList from '@/containers/pages/communities';
 import CommunitySettings from '@/containers/pages/community-settings';
 import Error404 from '@/containers/pages/404';
 import ResetPassword from '@/components/pages/reset-password';
+import SignupBeta from '@/components/pages/signup-for-beta';
 import '@/css';
 
 const App = () => (
   <Switch>
     <Route exact path="/" component={Home} />
+    <Route exact path="/subscribe" component={SignupBeta} />
     <Route exact path="/login" component={Login} />
     <Route exact path="/logout" component={Logout} />
     <Route exact path="/member/profile" component={MemberProfile} />
