@@ -20,13 +20,16 @@
 .theme-light {
     --primary : #325FFF;
     --primaryLight: #0f97ff;
-    --primaryDark: #212B36;
+    --primaryDark: #243983;
+    --primaryDarkx: #182fff;
+    --dark: #212B36;
     --gunmetal:#454f5b;
     --battleshipGrey:#637381;
     --blueyGrey: #919EAB;
     --lightBlueGrey: #C4CDD5;
     --paleBlue: #DFE3E8;
     --paleGrey: #F4F6F8;
+    --lightPaleGrey: #F9FaFb;
     --white: #FFFFFF;
     --green: #19A560;
     --yellow: #EDC200;
@@ -42,12 +45,15 @@
     --primary : #ff3e3e;
     --primaryLight: #0f97ff;
     --primaryDark: #ffffff;
+    --primaryDarkx: #182fff;
+    --dark: #212B36;
     --gunmetal:#454f5b;
     --battleshipGrey:#637381;
     --blueyGrey: #19a560;
     --lightBlueGrey: #C4CDD5;
     --paleBlue: #DFE3E8;
     --paleGrey: #F4F6F8;
+    --lightPaleGrey: #F9FaFb;
     --white: #212B36;
     --green: #19A560;
     --yellow: #EDC200;
