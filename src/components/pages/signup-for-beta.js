@@ -99,7 +99,7 @@ class SignupBeta extends Component {
               Beta program will launch as soon as possible
             </Paragraph>
           </Header>
-          <div className="flex">
+          <div className="flex mt-32">
             <div className="w-2/4 pr-12">
               <Title type="h2" extraClassName="font-bold my-8">
                 Join, Start and Create Online Communities
