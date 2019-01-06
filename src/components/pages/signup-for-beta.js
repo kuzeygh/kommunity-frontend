@@ -155,6 +155,7 @@ class SignupBeta extends Component {
               size="medium"
               label="Tweet"
               type="button"
+              iconLeft="Twitter"
             />
             <Button
               extraClassName={styles.shareButtons}
@@ -163,6 +164,7 @@ class SignupBeta extends Component {
               size="medium"
               label="Share"
               type="button"
+              iconLeft="Facebook"
             />
           </div>
         </Popup>
