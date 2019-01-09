@@ -1,11 +1,6 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
 import Header from '../common/header';
-import bottomLeft from './img/bottom-left.svg';
-import bottomRight from './img/bottom-right.svg';
-import topLeft from './img/top-left.svg';
-import illustration from './img/illustration.svg';
-import windowIllustration from './img/window.svg';
 import { Title, Paragraph, Button, Input, Popup } from '@/components/ui';
 import { mailPattern } from '@/constants';
 
@@ -22,7 +17,7 @@ const backgroundElements = [
       height: '232px',
       width: '261px',
     },
-    svg: bottomLeft,
+    svgPath: '/images/assets/bottom-left.svg',
   },
   {
     className: 'absolute pin-b pin-r',
@@ -31,7 +26,7 @@ const backgroundElements = [
       height: '526px',
       width: '521px',
     },
-    svg: bottomRight,
+    svgPath: '/images/assets/bottom-right.svg',
   },
   {
     className: 'absolute pin-t pin-l',
@@ -40,7 +35,7 @@ const backgroundElements = [
       height: '189px',
       width: '191px',
     },
-    svg: topLeft,
+    svgPath: '/images/assets/top-left.svg',
   },
 ];
 
@@ -90,7 +85,7 @@ class SignupBeta extends Component {
           <div
             className={element.className}
             key={i.toString()}
-            style={{ backgroundImage: `url(${element.svg})`, ...element.style }}
+            style={{ backgroundImage: `url(${element.svgPath})`, ...element.style }}
           />
         ))}
         <div className="container">
@@ -133,7 +128,11 @@ class SignupBeta extends Component {
               </form>
             </div>
             <div className="w-2/4 pl-12">
-              <img className="pointer-events-none" src={illustration} alt="Hey!" />
+              <img
+                className="pointer-events-none"
+                src="/images/assets/illustration.svg"
+                alt="Hey!"
+              />
             </div>
           </div>
         </div>
@@ -142,7 +141,7 @@ class SignupBeta extends Component {
           wrapperExtraClassName="text-center"
           onClose={this.onClosePopup}
         >
-          <img className="pointer-events-none" src={windowIllustration} alt="Hey!" />
+          <img className="pointer-events-none" src="/images/assets/window.svg" alt="Hey!" />
           <Title type="h5" extraClassName="font-extrabold mt-6 mb-2">
             Thanks for signing up!
           </Title>
