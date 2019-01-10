@@ -17,7 +17,7 @@ const backgroundElements = [
       height: '232px',
       width: '261px',
     },
-    svgPath: '/images/assets/bottom-left.svg',
+    svgPath: '/images/landing/bottom-left.svg',
   },
   {
     className: 'absolute pin-b pin-r',
@@ -26,7 +26,7 @@ const backgroundElements = [
       height: '526px',
       width: '521px',
     },
-    svgPath: '/images/assets/bottom-right.svg',
+    svgPath: '/images/landing/bottom-right.svg',
   },
   {
     className: 'absolute pin-t pin-l',
@@ -35,7 +35,7 @@ const backgroundElements = [
       height: '189px',
       width: '191px',
     },
-    svgPath: '/images/assets/top-left.svg',
+    svgPath: '/images/landing/top-left.svg',
   },
 ];
 
@@ -53,7 +53,7 @@ class SignupBeta extends Component {
 
     this.state = {
       email: '',
-      subscribePopup: false,
+      showPopup: false,
     };
   }
 
@@ -61,7 +61,7 @@ class SignupBeta extends Component {
     e.preventDefault();
 
     this.setState({
-      subscribePopup: true,
+      showPopup: true,
     });
   };
 
@@ -73,12 +73,12 @@ class SignupBeta extends Component {
 
   onClosePopup = () => {
     this.setState({
-      subscribePopup: false,
+      showPopup: false,
     });
   };
 
   render() {
-    const { email, subscribePopup } = this.state;
+    const { email, showPopup } = this.state;
     return (
       <React.Fragment>
         {backgroundElements.map((element, i) => (
@@ -130,18 +130,18 @@ class SignupBeta extends Component {
             <div className="w-2/4 pl-12">
               <img
                 className="pointer-events-none"
-                src="/images/assets/illustration.svg"
+                src="/images/landing/illustration.svg"
                 alt="Hey!"
               />
             </div>
           </div>
         </div>
         <Popup
-          show={subscribePopup}
+          show={showPopup}
           wrapperExtraClassName="text-center"
           onClose={this.onClosePopup}
         >
-          <img className="pointer-events-none" src="/images/assets/window.svg" alt="Hey!" />
+          <img className="pointer-events-none" src="/images/landing/window.svg" alt="Hey!" />
           <Title type="h5" extraClassName="font-extrabold mt-6 mb-2">
             Thanks for signing up!
           </Title>
