@@ -6,6 +6,6 @@
   },
   "setupFiles": ["./test/test-utils/setup.js"],
   "moduleNameMapper": {
-    "\\.(css|svg)$": "<rootDir>/__mocks__/styleMock.js"
+    "\\.(css)$": "<rootDir>/__mocks__/styleMock.js"
   }
 }
