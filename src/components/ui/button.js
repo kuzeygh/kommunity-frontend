@@ -111,6 +111,7 @@ class UIButton extends React.Component {
       size,
       iconOnly,
     } = this.props;
+
     const { buttonWrapperStyle, iconsStyle } = this.getClassnames();
     const textButton = iconOnly ? null : (
       <div className={cls('flex items-center justify-center', { 'opacity-0': loading })}>
