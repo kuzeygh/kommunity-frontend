@@ -136,11 +136,7 @@ class SignupBeta extends Component {
             </div>
           </div>
         </div>
-        <Popup
-          show={showPopup}
-          wrapperExtraClassName="text-center"
-          onClose={this.onClosePopup}
-        >
+        <Popup show={showPopup} wrapperExtraClassName="text-center" onClose={this.onClosePopup}>
           <img className="pointer-events-none" src="/images/landing/window.svg" alt="Hey!" />
           <Title type="h5" extraClassName="font-extrabold mt-6 mb-2">
             Thanks for signing up!
