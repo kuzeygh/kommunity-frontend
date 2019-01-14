@@ -110,7 +110,6 @@ class UIButton extends React.Component {
       loading,
       size,
       iconOnly,
-      backgroundColor,
     } = this.props;
 
     const { buttonWrapperStyle, iconsStyle } = this.getClassnames();
@@ -135,7 +134,6 @@ class UIButton extends React.Component {
         className={cls(buttonWrapperStyle, extraClassName)}
         disabled={disabled}
         type={type || 'submit'}
-        style={{ backgroundColor }}
       >
         <div className="flex items-center justify-center">
           {textButton}
@@ -164,7 +162,6 @@ UIButton.defaultProps = {
 };
 
 UIButton.propTypes = {
-  backgroundColor: PropTypes.string,
   disabled: PropTypes.bool,
   extraClassName: PropTypes.string,
   groupOrder: PropTypes.oneOf(['first', 'middle', 'last', 'none']),

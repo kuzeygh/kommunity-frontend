@@ -61,6 +61,8 @@ const colors = {
   faintYellow: 'var(--faint-yellow)',
   faintRed: 'var(--faint-red)',
   faintBlue: 'var(--faint-blue)',
+  twitter: '#00aced',
+  facebook: '#3a5a98'
 };
 
 module.exports = {

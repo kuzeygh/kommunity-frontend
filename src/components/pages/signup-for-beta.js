@@ -1,5 +1,5 @@
-/* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
+import cls from 'classnames';
 import Header from '../common/header';
 import { Title, Paragraph, Button, Input, Popup } from '@/components/ui';
 import { mailPattern } from '@/constants';
@@ -144,8 +144,7 @@ class SignupBeta extends Component {
           <Paragraph extraClassName="mb-8">Show some love for makers :)</Paragraph>
           <div className="buttons flex justify-around">
             <Button
-              extraClassName={styles.shareButtons}
-              backgroundColor="#00aced"
+              extraClassName={cls(styles.shareButtons, 'bg-twitter')}
               styleType="primary"
               size="medium"
               label="Tweet"
@@ -153,8 +152,7 @@ class SignupBeta extends Component {
               iconLeft="Twitter"
             />
             <Button
-              extraClassName={styles.shareButtons}
-              backgroundColor="#3a5a98"
+              extraClassName={cls(styles.shareButtons, 'bg-facebook')}
               styleType="primary"
               size="medium"
               label="Share"
