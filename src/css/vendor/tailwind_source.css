@@ -9,6 +9,10 @@
 
  @tailwind components;
 
+html, body, #root {
+    height: 100%;
+}
+
 .border-box {
     box-sizing: border-box;
 }
@@ -40,7 +44,7 @@
     --faint-red: #FFEBEB;
     --faint-blue: #eaf6fc;
   }
-  
+
   .theme-black {
     --primary : #ff3e3e;
     --primaryLight: #0f97ff;

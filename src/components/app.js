@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router';
 
+import Chat from '@/containers/pages/chat';
 import Home from '@/containers/pages/home';
 import Login from '@/containers/pages/login';
 import Logout from '@/containers/pages/logout';
@@ -21,6 +22,7 @@ const App = () => (
     <Route exact path="/logout" component={Logout} />
     <Route exact path="/member/profile" component={MemberProfile} />
     <Route exact path="/reset-password" component={ResetPassword} />
+    <Route exact path="/chat" component={Chat} />
     <Route exact path="/communities" component={CommunityList} />
     <Route exact path="/community/:communityUuid" component={CommunityDiscover} />
     <Route exact path="/community/:communityUuid/settings" component={CommunitySettings} />

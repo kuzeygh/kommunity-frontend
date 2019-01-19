@@ -791,7 +791,7 @@ module.exports = {
     tracking: [],
     userSelect: [],
     verticalAlign: [],
-    visibility: ['responsive'],
+    visibility: ['group-hover', 'responsive'],
     whitespace: [],
     width: ['responsive'],
     zIndex: ['responsive'],

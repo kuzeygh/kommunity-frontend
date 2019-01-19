@@ -5,8 +5,9 @@ import Card from './card';
 import Dropdown from './dropdown';
 import Icon from './icon';
 import Img from './img';
-import Paragraph from './paragraph';
+import Loading from './loading';
 import Link from './link';
+import Paragraph from './paragraph';
 import TextArea from './text-area';
 import Title from './title';
 import Input from './input';
@@ -17,7 +18,6 @@ import CheckboxGroup from './checkbox-group';
 import Switch from './switch';
 import Notification from './notification';
 import Popup from './popup';
-import Loading from './loading';
 import Tooltip from './tooltip';
 
 export {

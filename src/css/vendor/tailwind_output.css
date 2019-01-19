@@ -5609,6 +5609,14 @@ table {
   visibility: hidden;
 }
 
+.group:hover .group-hover\:visible {
+  visibility: visible;
+}
+
+.group:hover .group-hover\:invisible {
+  visibility: hidden;
+}
+
 .whitespace-normal {
   white-space: normal;
 }
@@ -5875,6 +5883,12 @@ table {
   .container {
     max-width: 1200px;
   }
+}
+
+html,
+body,
+#root {
+  height: 100%;
 }
 
 .border-box {
@@ -10090,6 +10104,14 @@ table {
   }
 
   .sm\:invisible {
+    visibility: hidden;
+  }
+
+  .group:hover .sm\:group-hover\:visible {
+    visibility: visible;
+  }
+
+  .group:hover .sm\:group-hover\:invisible {
     visibility: hidden;
   }
 
@@ -14414,6 +14436,14 @@ table {
     visibility: hidden;
   }
 
+  .group:hover .md\:group-hover\:visible {
+    visibility: visible;
+  }
+
+  .group:hover .md\:group-hover\:invisible {
+    visibility: hidden;
+  }
+
   .md\:w-0 {
     width: 0;
   }
@@ -18732,6 +18762,14 @@ table {
   }
 
   .lg\:invisible {
+    visibility: hidden;
+  }
+
+  .group:hover .lg\:group-hover\:visible {
+    visibility: visible;
+  }
+
+  .group:hover .lg\:group-hover\:invisible {
     visibility: hidden;
   }
 
