@@ -1,11 +1,11 @@
 import gql from 'graphql-tag';
 
-export const COMMUNITY_MEMBERS = gql`
+export const FETCH_COMMUNITY_MEMBERS = gql`
   query getCommunityMembers($uuid: ID!) {
     getCommunityMembers(uuid: $uuid) {
-      uuid
       name
       users {
+        uuid
         firstName
         lastName
         CommunityUser {

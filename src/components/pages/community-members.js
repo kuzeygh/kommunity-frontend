@@ -1,91 +1,9 @@
-import { graphql } from 'react-apollo';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Loading, Title, Icon, Card, Button, Paragraph } from '@/components/ui';
-import gql from 'graphql-tag';
-import { COMMUNITY_MEMBERS, CHANGE_ROLE, CHANGE_STATUS } from '@/components/pages/requests';
 
-class User extends React.Component {
-  state = {
-    editMode: false,
-  };
-
-  handleClickEdit = () => {
-    const { editMode } = this.state;
-    this.setState({
-      editMode: !editMode,
-    });
-  };
-
-  handleClickRole = () => {
-    // TODO: edit role mutate using gql
-    const { editMode } = this.state;
-    this.setState({
-      editMode: !editMode,
-    });
-  };
-
-  handleClickEdit = () => {
-    // TODO: edit status. mutate using gql
-    const { editMode } = this.state;
-    this.setState({
-      editMode: !editMode,
-    });
-  };
-
-  render() {
-    const {
-      user: {
-        firstName,
-        lastName,
-        CommunityUser: { role, status },
-      },
-    } = this.props;
-    // console.log(this.props.user);
-    const { editMode } = this.state;
-    return (
-      <li className="flex items-center p-1 hover:bg-paleGrey">
-        <div className="w-full">
-          {firstName} {lastName} Role({role}) Status({status})
-        </div>
-        <Icon
-          onClick={this.handleClickEdit}
-          name="Edit"
-          className="text-primary ml-3 hover:text-primaryDark cursor-pointer"
-        />
-        {editMode && (
-          <div>
-            <Button
-              label={` Edit Role (${role})`}
-              size="small"
-              styleType="plain"
-              onClick={this.handleClickRole}
-            />
-            <Button
-              label={` Edit Status (${status})`}
-              size="small"
-              styleType="plain"
-              onClick={this.handleClickStatus}
-            />
-            <Button
-              label="Remove Member"
-              size="small"
-              styleType="plain"
-              onClick={this.handleClickRemove}
-            />
-          </div>
-        )}
-      </li>
-    );
-  }
-}
-
-User.propTypes = {
-  user: PropTypes.shape({
-    firstName: PropTypes.string,
-    lastName: PropTypes.string,
-  }),
-};
+import Header from '@/components/common/header';
+import { Loading, Title, Button, Paragraph } from '@/components/ui';
+import User from './community-members/user';
 
 // eslint-disable-next-line react/no-multi-comp
 class CommunityMembers extends React.Component {
@@ -95,38 +13,47 @@ class CommunityMembers extends React.Component {
 
   render() {
     const {
-      data: { loading = true, getCommunityMembers: { name = '', users = {} } = {} } = {},
+      communityMembers: { loading = true, getCommunityMembers: { name = '', users } = {} } = {},
     } = this.props;
 
-    // console.log(this.props);
+    if (!users) {
+      return null;
+    }
 
     return (
-      <div className="container text-center">
+      <div className="container">
         {loading ? (
           <Loading />
         ) : (
-          <div className="container text-center">
-            <div className="container py-4">
-              <Title type="h2">Community Members Page</Title>
+          <div className="flex flex-col h-full">
+            <div className="bg-gray-gradient">
+              <div className="container">
+                <Header />
+              </div>
             </div>
-            <div className="container py-4">
-              <Paragraph>Community Name: {name}</Paragraph>
-              <Button
-                label="Invite Members"
-                size="small"
-                styleType="outline"
-                onClick={this.handleClickInvite}
-                extraClassName="m-4"
-              />
-              <Title type="h5">Community Userlist</Title>
-              <div className="flex flex-wrap justify-center w-full">
-                <Card shadow="lg" applyPadding={false}>
-                  <ul className="list-reset p-4">
-                    {users.map((user, index) => (
-                      <User user={user} key={index.toString()} />
+            <div className="container">
+              <div className="container py-4">
+                <Title type="h2">Community Members</Title>
+              </div>
+              <div className="container py-4">
+                <Paragraph>
+                  <span>{name}</span>
+                  <Button
+                    label="Invite Members"
+                    size="small"
+                    styleType="outline"
+                    onClick={this.handleClickInvite}
+                    extraClassName="m-4"
+                  />
+                </Paragraph>
+                <Title type="h5">Users</Title>
+                <div className="flex">
+                  <ul className="list-reset py-4">
+                    {users.map(user => (
+                      <User user={user} key={user.uuid} />
                     ))}
                   </ul>
-                </Card>
+                </div>
               </div>
             </div>
           </div>
@@ -137,18 +64,11 @@ class CommunityMembers extends React.Component {
 }
 
 CommunityMembers.propTypes = {
-  data: PropTypes.shape({
+  communityMembers: PropTypes.shape({
     getCommunityMembers: PropTypes.object,
     name: PropTypes.string,
     users: PropTypes.object,
   }),
 };
 
-export default graphql(COMMUNITY_MEMBERS, {
-  // name: 'communityMembers',
-  options: props => ({
-    variables: {
-      uuid: props.match.params.communityUuid,
-    },
-  }),
-})(CommunityMembers);
+export default CommunityMembers;
