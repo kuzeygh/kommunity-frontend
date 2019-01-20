@@ -12,7 +12,7 @@ describe('UI Component: <RadioButtonGroup />', () => {
   };
   const props = index => ({
     label: `label-${index}`,
-    value: { prop1: index, prop2: `p-${index}` },
+    value: index.toString(),
   });
   const wrapper = shallow(
     <RadioButtonGroup {...groupProps}>

@@ -4,15 +4,16 @@ import cls from 'classnames';
 
 const style = {
   common:
-    'ui-textarea inline-block border border-lgray w-full px-4 rounded-4 bg-white ' +
-    'leading-2xl text-base focus:text-black focus:bg-white ' +
-    'focus:border-blue focus:border-2 focus:outline-none disabled:bg-xlgray',
+    'ui-textarea inline-block border border-lightBlueGrey w-full px-4 rounded-4 ' +
+    'bg-white leading-base text-base disabled:bg-paleGrey ' +
+    'focus:text-dark focus:bg-white focus:border-primary ' +
+    'focus:shadow-input-primary focus:outline-none py-3',
   errorText: 'error-text text-red my-2 leading-base',
   helpText: 'help-text text-gray leading-base',
-  label: 'label text-black block leading-base font-normal',
+  label: 'label text-black block leading-base mb-2 font-normal',
   state: {
-    default: 'text-gray',
-    error: 'text-black border-red focus:border-red',
+    default: 'text-blueyGrey',
+    error: 'text-dark border-red focus:border-red focus:shadow-input-red',
   },
   wrapper: 'wrapper relative',
 };
@@ -45,6 +46,7 @@ class UITextArea extends Component {
       onChange,
       extraWrapperClassName,
       id,
+      rows,
     } = this.props;
 
     const { value } = this.state;
@@ -68,6 +70,7 @@ class UITextArea extends Component {
         {labelElem}
         <div className={wrapperClass}>
           <textarea
+            rows={rows}
             id={id}
             placeholder={placeholder}
             className={inputClass}
@@ -83,7 +86,9 @@ class UITextArea extends Component {
   }
 }
 
-UITextArea.defaultProps = {};
+UITextArea.defaultProps = {
+  rows: 3,
+};
 
 UITextArea.propTypes = {
   disabled: PropTypes.bool,
@@ -91,10 +96,11 @@ UITextArea.propTypes = {
   extraClassName: PropTypes.string,
   extraWrapperClassName: PropTypes.string,
   helpText: PropTypes.string,
-  id: PropTypes.string,
+  id: PropTypes.string.isRequired,
   label: PropTypes.string,
   onChange: PropTypes.func,
   placeholder: PropTypes.string,
+  rows: PropTypes.number,
   value: PropTypes.string,
 };
 

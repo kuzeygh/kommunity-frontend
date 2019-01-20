@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 class RadioButtonGroup extends React.Component {
   constructor(props) {
     super(props);
+    this.RBGroup = React.createRef();
     this.state = {
       selectedValue: props.initialValue || undefined,
     };
@@ -18,15 +19,26 @@ class RadioButtonGroup extends React.Component {
   render() {
     const { selectedValue } = this.state;
     const { disabled, extraClassName, children } = this.props;
+    let name = '';
+    if (this.RBGroup.current) {
+      name = `${this.RBGroup.current.getBoundingClientRect().x}-${
+        this.RBGroup.current.getBoundingClientRect().y
+      }`;
+    }
     const newRadioButtons = React.Children.map(children, child => {
       return React.cloneElement(child, {
         disabled,
+        name,
         onChange: this.onChange(child.props.value),
         selected: selectedValue === child.props.value,
       });
     });
 
-    return <div className={extraClassName}>{newRadioButtons}</div>;
+    return (
+      <div className={extraClassName} ref={this.RBGroup}>
+        {newRadioButtons}
+      </div>
+    );
   }
 }
 

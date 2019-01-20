@@ -1,4 +1,8 @@
 {
+  "navbar": {
+    "cancelSearch":"Stornieren",
+    "menu":"Menu"
+  },
   "homehero": {
     "title": "Treten Sie bei, starten Sie und bauen Sie Online-Communities auf!"
   },

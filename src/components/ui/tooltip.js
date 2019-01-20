@@ -95,7 +95,7 @@ UITooltip.defaultProps = {
 };
 
 UITooltip.propTypes = {
-  children: PropTypes.element,
+  children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   content: PropTypes.string,
   error: PropTypes.bool,
   extraClassName: PropTypes.string,

@@ -1,4 +1,8 @@
 {
+  "navbar": {
+    "cancelSearch":"Cancel",
+    "menu-alt":"Menu"
+  },
   "homehero": {
     "title": "Join, start and build online communities!"
   },

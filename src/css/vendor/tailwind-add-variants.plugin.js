@@ -10,5 +10,11 @@ module.exports = () => {
         return `.last-child${separator}${className}:last-child`;
       });
     });
+
+    addVariant('placeholder', ({ modifySelectors, separator }) => {
+      modifySelectors(({ className }) => {
+        return `.placeholder${separator}${className}::placeholder`;
+      });
+    });
   };
 };

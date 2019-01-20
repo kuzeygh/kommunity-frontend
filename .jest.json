@@ -4,5 +4,8 @@
       "statements": 50
     }
   },
-  "setupFiles": ["./test/test-utils/setup.js"]
+  "setupFiles": ["./test/test-utils/setup.js"],
+  "moduleNameMapper": {
+    "\\.(css)$": "<rootDir>/__mocks__/styleMock.js"
+  }
 }

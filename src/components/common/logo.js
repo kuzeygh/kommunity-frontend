@@ -1,23 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link, Paragraph } from '@/components/ui';
-import cls from 'classnames';
+
+import { Link, Img } from '@/components/ui';
 
 const Logo = props => {
   const { extraClassName } = props;
-
+  const logoPath = '/images/kommunity-logo.svg';
   return (
-    <div className={cls('inline-block text-right', extraClassName)}>
-      <Link
-        className="text-xl leading-base no-underline font-bold text-right"
-        color="text-dark hover:text-lightBlueGrey"
-        to="/"
-      >
-        <Paragraph className="text-blueyGrey text-2xs font-extrabold -mb-2">BETA</Paragraph>
-        <span>kommunity</span>
-        <span className="text-primary">.app</span>
-      </Link>
-    </div>
+    <Link className={extraClassName} to="/">
+      <Img src={logoPath} height="100%" width="100%" />
+    </Link>
   );
 };
 

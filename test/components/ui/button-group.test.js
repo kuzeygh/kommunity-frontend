@@ -5,8 +5,8 @@ import { Button, ButtonGroup } from '@/components/ui';
 describe('UI Component: <ButtonGroup />', () => {
   const wrapper = shallow(
     <ButtonGroup>
-      <Button label="Group Test" />
-      <Button label="Group Test 2" />
+      <Button label="Group Test" styleType="primary" size="small" />
+      <Button label="Group Test 2" styleType="primary" size="small" />
     </ButtonGroup>,
   );
 

@@ -1,19 +1,13 @@
 /* eslint-disable */
 /*
-
 Tailwind - The Utility-First CSS Framework
-
 A project by Adam Wathan (@adamwathan), Jonathan Reinink (@reinink),
 David Hemphill (@davidhemphill) and Steve Schoger (@steveschoger).
-
 Welcome to the Tailwind config file. This is where you can customize
 Tailwind specifically for your project. Don't be intimidated by the
 length of this file. It's really just a big JavaScript object and
 we've done our very best to explain each section.
-
 View the full documentation at https://tailwindcss.com.
-
-
 |-------------------------------------------------------------------------------
 | The default config
 |-------------------------------------------------------------------------------
@@ -49,6 +43,7 @@ const colors = {
   primary: 'var(--primary)',
   primaryLight: 'var(--primaryLight)',
   primaryDark: 'var(--primaryDark)',
+  primaryDarkx: 'var(--primaryDarkx)',
   dark: 'var(--dark)',
   gunmetal: 'var(--gunmetal)',
   battleshipGrey: 'var(--battleshipGrey)',
@@ -56,6 +51,7 @@ const colors = {
   lightBlueGrey: 'var(--lightBlueGrey)',
   paleBlue: 'var(--paleBlue)',
   paleGrey: 'var(--paleGrey)',
+  lightPaleGrey: 'var(--lightPaleGrey)',
   white: 'var(--white)',
   green: 'var(--green)',
   yellow: 'var(--yellow)',
@@ -65,6 +61,8 @@ const colors = {
   faintYellow: 'var(--faint-yellow)',
   faintRed: 'var(--faint-red)',
   faintBlue: 'var(--faint-blue)',
+  twitter: '#00aced',
+  facebook: '#3a5a98',
 };
 
 module.exports = {
@@ -107,7 +105,6 @@ module.exports = {
     md: { min: '768px', max: '1199px' },
     lg: { min: '1200px' },
   },
-
   /*
   |-----------------------------------------------------------------------------
   | Fonts                                    https://tailwindcss.com/docs/fonts
@@ -387,6 +384,7 @@ module.exports = {
   */
 
   width: {
+    '0': '0',
     '2': '0.5rem',
     '4': '1rem',
     '6': '1.5rem',
@@ -396,7 +394,9 @@ module.exports = {
     '16': '4rem',
     '18': '4.5rem',
     '20': '5rem',
+    '24': '6rem',
     '32': '8rem',
+    '82': '20.5rem',
     '112': '28rem',
     '1/4': '25%',
     '2/4': '50%',
@@ -417,6 +417,7 @@ module.exports = {
     '1/5': '20%',
     '3/10': '30%',
     full: '100%',
+    auto: 'auto',
     screen: '100vw',
   },
 
@@ -441,9 +442,11 @@ module.exports = {
     '6': '1.5rem',
     '8': '2rem',
     '12': '3rem',
+    '14': '3.5rem',
     '16': '4rem',
     '18': '4.5rem',
     '20': '5rem',
+    '24': '6rem',
     '32': '8rem',
     auto: 'auto',
     full: '100%',
@@ -481,7 +484,8 @@ module.exports = {
   */
 
   minHeight: {
-    '32': '8rem',
+    13: '3.25rem',
+    32: '8rem',
   },
 
   /*
@@ -546,6 +550,7 @@ module.exports = {
     4: '1rem', // 16px
     5: '1.25rem',
     6: '1.5rem',
+    7: '1.75rem',
     8: '2rem',
     10: '2.5rem',
     12: '3rem',
@@ -630,6 +635,7 @@ module.exports = {
   */
 
   shadows: {
+    none: 'none',
     default: '0 0 1px 0 rgba(23,43,77,0.24)',
     md: '0 2px 4px 0 rgba(23,43,77,0.24)',
     lg: '0 6px 8px 0 rgba(23,43,77,0.24)',
@@ -637,6 +643,8 @@ module.exports = {
     none: 'none',
     'input-primary': 'inset 0 0 0 1px ' + colors.primary,
     'input-red': 'inset 0 0 0 1px ' + colors.red,
+    'button-dark': 'inset 0 1px 4px 0 rgba(33, 43, 54, 0.5) ' + colors.dark,
+    'button-blueyGrey': 'inset 0 1px 4px 0 rgba(33, 43, 54, 0.5) ' + colors.blueyGrey,
   },
 
   /*
@@ -679,6 +687,7 @@ module.exports = {
     60: '0.6',
     70: '0.7',
     80: '0.8',
+    90: '0.9',
     100: '1.0',
   },
 
@@ -740,23 +749,23 @@ module.exports = {
   modules: {
     appearance: ['responsive'],
     backgroundAttachment: [],
-    backgroundColors: ['hover', 'focus', 'disabled'],
+    backgroundColors: ['hover', 'focus', 'disabled', 'responsive', 'active'],
     backgroundPosition: [],
     backgroundRepeat: [],
     backgroundSize: [],
     borderCollapse: [],
-    borderColors: ['hover', 'focus'],
+    borderColors: ['hover', 'focus', 'responsive', 'active'],
     borderRadius: [],
     borderStyle: [],
-    borderWidths: ['focus'],
+    borderWidths: ['focus', 'responsive'],
     cursor: [],
-    display: ['responsive'],
+    display: ['responsive', 'important'],
     flexbox: ['responsive'],
     float: false,
     fonts: [],
-    fontWeights: [],
+    fontWeights: ['hover', 'group-hover'],
     height: ['responsive'],
-    leading: [],
+    leading: ['responsive'],
     lists: [],
     margin: ['responsive', 'last-child'],
     maxHeight: [],
@@ -764,28 +773,28 @@ module.exports = {
     minHeight: [],
     minWidth: [],
     negativeMargin: [],
-    opacity: ['hover'],
+    opacity: ['hover', 'placeholder', 'active'],
     outline: ['focus'],
     overflow: ['responsive'],
     padding: ['responsive'],
     pointerEvents: [],
     position: ['responsive'],
     resize: [],
-    shadows: ['focus'],
+    shadows: ['focus', 'responsive', 'active'],
     svgFill: [],
     svgStroke: [],
     tableLayout: false,
     textAlign: ['responsive'],
-    textColors: ['responsive', 'hover', 'focus'],
+    textColors: ['responsive', 'hover', 'focus', 'group-hover', 'placeholder', 'active'],
     textSizes: ['responsive'],
     textStyle: ['responsive', 'hover'],
     tracking: [],
     userSelect: [],
     verticalAlign: [],
-    visibility: [],
+    visibility: ['group-hover', 'responsive'],
     whitespace: [],
     width: ['responsive'],
-    zIndex: [],
+    zIndex: ['responsive'],
   },
 
   /*
@@ -822,6 +831,8 @@ module.exports = {
         },
       },
     }),
+    require('tailwindcss-flexbox-order')([0, 1, 2], ['responsive']),
+    require('tailwindcss-important')(),
   ],
 
   /*

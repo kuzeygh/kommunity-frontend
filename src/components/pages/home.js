@@ -10,7 +10,7 @@ import Pricing from './home/pricing';
 
 const Home = () => {
   return (
-    <div>
+    <div className="overflow-hidden">
       <div className="bg-gray-gradient">
         <div className="container">
           <Header />

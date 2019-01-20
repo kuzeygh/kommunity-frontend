@@ -18,15 +18,17 @@ describe('UI Component: <Input />', () => {
       helpText="help text"
       errorText="error text"
       value="initial value"
+      initialValue="initial value"
       iconLeft={<Search className={iconLeftClass} />}
       iconRight={<Delete className={iconRightClass} />}
+      id="input-id"
     />,
   );
 
   const input = wrapper.find('input');
 
   test('sets initial value if provided', () => {
-    expect(wrapper.state('value')).toBe('initial value');
+    expect(input.props().defaultValue).toBe('initial value');
   });
 
   test('renders Input', () => {
@@ -35,6 +37,7 @@ describe('UI Component: <Input />', () => {
 
   test('renders label', () => {
     const label = wrapper.find('.label');
+    expect(wrapper.state('value')).toBe('initial value');
     expect(label.text()).toEqual('label text');
   });
 

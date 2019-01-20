@@ -3,7 +3,7 @@ import cls from 'classnames';
 import PropTypes from 'prop-types';
 
 const RadioButton = props => {
-  const { disabled, extraClassName, label, onChange, selected, size, value } = props;
+  const { disabled, extraClassName, label, onChange, selected, size, value, name } = props;
   const style = {
     container: [
       'text-blueyGrey m-1 flex items-center',
@@ -11,10 +11,9 @@ const RadioButton = props => {
     ],
     customRadio: {
       common: cls('flex items-center justify-center rounded-full border focus:outline-none', {
-        'border-lightBlueGrey': selected,
-        'border-primary focus:border-primary': selected && !disabled,
+        'border-primary': selected && !disabled,
         'focus:border-2': !disabled,
-        'focus:border-blueyGrey': !selected && !disabled,
+        'focus:border-blueyGrey border-lightBlueGrey': !selected && !disabled,
         'opacity-60 bg-paleGrey': disabled,
       }),
       medium: 'w-6 h-6',
@@ -37,7 +36,7 @@ const RadioButton = props => {
       medium: 'text-lg',
       small: 'text-sm',
     },
-    radio: cls('absolute invisible'),
+    radio: 'absolute invisible',
   };
 
   // TODO there could be multiple elements with the same value on the page.
@@ -52,8 +51,14 @@ const RadioButton = props => {
         className={cls(style.radio)}
         defaultChecked={selected}
         disabled={disabled}
+        name={name}
       />
-      <div className={cls(style.customRadio.common, style.customRadio[size])}>
+      <div
+        className={cls(style.customRadio.common, style.customRadio[size])}
+        tabIndex={0}
+        role="radio"
+        aria-checked="false"
+      >
         <div className={cls(style.inside[size], style.inside.common)} />
       </div>
       <p className={cls(style.label.common, style.label[size])}>{label}</p>
@@ -70,6 +75,7 @@ RadioButton.propTypes = {
   disabled: PropTypes.bool,
   extraClassName: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   label: PropTypes.string,
+  name: PropTypes.string,
   onChange: PropTypes.func,
   selected: PropTypes.bool,
   size: PropTypes.oneOf(['small', 'medium']),
