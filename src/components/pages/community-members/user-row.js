@@ -1,41 +1,39 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-// import { graphql } from 'react-apollo';
 
 import { Dropdown, Icon } from '@/components/ui';
-// import { CHANGE_ROLE, CHANGE_STATUS } from '@/components/pages/requests';
 
-class User extends React.Component {
+class UserRow extends React.Component {
   state = {
     editMode: false,
   };
 
-  // eslint-disable-next-line no-unused-vars
   handleSelectStatus = status => {
+    const { changeStatus, user } = this.props;
     // TODO: update user status through gql on backend
-    // console.log(`Status change requested: '${status}' for uuid: ${this.props.user.uuid}`);
-    // graphql(CHANGE_STATUS, {
-    //   options: props => ({
-    //     variables: {
-    //       userUuid: this.props.user.uuid,
-    //       status: status,
-    //     },
-    //   }),
-    // });
+    changeStatus({
+      variables: {
+        status,
+        userUuid: user.uuid,
+      },
+    })
+      // TODO handle errors
+      .then(() => {})
+      .catch(() => {});
   };
 
-  // eslint-disable-next-line no-unused-vars
   handleSelectRole = role => {
+    const { changeRole, user } = this.props;
     // TODO: update user role through gql on backend
-    // console.log(`Role change requested: '${role}' for uuid: ${this.props.user.uuid}`);
-    // graphql(CHANGE_ROLE, {
-    //   options: props => ({
-    //     variables: {
-    //       userUuid: this.props.user.uuid,
-    //       role: role,
-    //     },
-    //   }),
-    // });
+    changeRole({
+      variables: {
+        role,
+        userUuid: user.uuid,
+      },
+    })
+      // TODO handle errors
+      .then(() => {})
+      .catch(() => {});
   };
 
   handleClickEdit = () => {
@@ -100,11 +98,13 @@ class User extends React.Component {
   }
 }
 
-User.propTypes = {
+UserRow.propTypes = {
+  changeRole: PropTypes.func,
+  changeStatus: PropTypes.func,
   user: PropTypes.shape({
     firstName: PropTypes.string,
     lastName: PropTypes.string,
   }),
 };
 
-export default User;
+export default UserRow;
