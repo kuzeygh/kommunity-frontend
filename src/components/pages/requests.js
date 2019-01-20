@@ -18,7 +18,7 @@ export const FETCH_COMMUNITY_MEMBERS = gql`
 `;
 
 export const CHANGE_ROLE = gql`
-  mutation changeRole($userUuid: String, $role: String) {
+  mutation changeRole($userUuid: String!, $role: String!) {
     changeRole(userUuid: $userUuid, role: $role) {
       userUuid
       role
@@ -27,7 +27,7 @@ export const CHANGE_ROLE = gql`
 `;
 
 export const CHANGE_STATUS = gql`
-  mutation changeStatus($userUuid: String, $status: String) {
+  mutation changeStatus($userUuid: String!, $status: String!) {
     changeStatus(userUuid: $userUuid, status: $status) {
       userUuid
       status

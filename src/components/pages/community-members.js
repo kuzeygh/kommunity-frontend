@@ -1,12 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { graphql } from 'react-apollo';
 
-import Header from '@/components/common/header';
 import Footer from '@/components/common/footer';
+import Header from '@/components/common/header';
 import { Loading, Title, Button, Paragraph, Card } from '@/components/ui';
-import User from './community-members/user';
-import { FETCH_COMMUNITY_MEMBERS } from '@/components/pages/requests';
+import UserRow from '@/containers/pages/community-members/user-row';
 
 class CommunityMembers extends React.Component {
   handleClickInvite() {
@@ -52,7 +50,7 @@ class CommunityMembers extends React.Component {
                     <h5 className="mx-1">Edit</h5>
                   </li>
                   {users.map(user => (
-                    <User user={user} key={user.uuid} />
+                    <UserRow user={user} key={user.uuid} />
                   ))}
                 </ul>
               </Card>
@@ -73,11 +71,4 @@ CommunityMembers.propTypes = {
   }),
 };
 
-export default graphql(FETCH_COMMUNITY_MEMBERS, {
-  name: 'communityMembers',
-  options: props => ({
-    variables: {
-      uuid: props.match.params.communityUuid,
-    },
-  }),
-})(CommunityMembers);
+export default CommunityMembers;
